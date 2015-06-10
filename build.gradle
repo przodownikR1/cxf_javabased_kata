@@ -47,6 +47,7 @@ dependencies {
     compile 'org.apache.cxf:cxf-rt-frontend-jaxws:3.1.0'
     compile 'org.apache.cxf:cxf-rt-transports-http:3.1.0'
     testCompile 'junit:junit:4.12'
+    runtime('mysql:mysql-connector-java:5.1.35')
     compile 'com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.5.3'
  
 }
