@@ -95,6 +95,8 @@
       <url>jdbc:mysql://host_name:3306/batchCamp</url>
       <user>batch</user>
       <password>batch</password>
+      <insertHeaders>true</insertHeaders>
+      
     </connectionSource>
   </appender>
   
