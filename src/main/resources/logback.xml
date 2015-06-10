@@ -127,9 +127,9 @@
       <appender-ref ref="PROBLEM_FILE" />
    </logger>
    
-   <logger name="db_logger" additivity="false">
+  <!--  <logger name="db_logger" additivity="false">
      <level value="INFO"/>
      <appender-ref ref="DB"/>
-   </logger>
+   </logger> -->
    
 </configuration>
