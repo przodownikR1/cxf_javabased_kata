@@ -100,12 +100,6 @@
     </connectionSource>
   </appender>
   
-  <root level="DEBUG" >
-    <appender-ref ref="DB" />
-  </root>
-
-
-
 	<logger name="pl.java.scalatech" level="info" />
 	<logger name="org.springframework" level="info" />
 	<logger name="org.springframework.data" level="warn" />
