@@ -12,11 +12,16 @@ buildscript {
 }
 
 apply plugin: 'java'
+apply plugin: "jacoco"
 apply plugin: 'eclipse'
-apply plugin: 'idea'
 apply plugin: 'spring-boot' 
+apply from: "gradle/sonar.gradle"
 apply plugin: 'io.spring.dependency-management' 
 
+    jacoco {
+      toolVersion = '0.7.+'
+    }
+    
 jar {
     baseName = 'reserved'
     version = '0.0.1-SNAPSHOT'
