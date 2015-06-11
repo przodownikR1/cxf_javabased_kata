@@ -12,23 +12,23 @@ buildscript {
 }
 
 apply plugin: 'java'
-//apply plugin: "jacoco"
+apply plugin: "jacoco"
 apply plugin: 'eclipse'
 apply plugin: 'spring-boot' 
 apply from: "gradle/sonar.gradle"
 apply plugin: 'io.spring.dependency-management' 
 
-  //  jacoco {
-    //  toolVersion = '0.7.+'
-   // }
-    //jacocoTestReport {
-   //  additionalSourceDirs = files(sourceSets.main.allJava.srcDirs)
-    //reports {
-    //xml.enabled true
-    //csv.enabled false
-   // html.destination "${buildDir}/jacocoHtml"
-   // }
-   // }
+    jacoco {
+      toolVersion = '0.7.+'
+     }
+    jacocoTestReport {
+     additionalSourceDirs = files(sourceSets.main.allJava.srcDirs)
+    reports {
+      xml.enabled true
+    csv.enabled false
+    html.destination "${buildDir}/jacocoHtml"
+    }
+    }
     
 jar {
     baseName = 'reserved'
