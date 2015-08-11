@@ -30,6 +30,13 @@ apply plugin: 'io.spring.dependency-management'
     }
     }
     
+    test {
+    reports {
+        junitXml.enabled = true
+        html.enabled = true
+    }               
+}
+    
 jar {
     baseName = 'reserved'
     version = '0.0.1-SNAPSHOT'
@@ -54,11 +61,22 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-data-jpa'
     compile ("com.google.guava:guava:18.0") 
     compile ("org.projectlombok:lombok:1.16.2")
-    compile("org.apache.camel:camel-cxf:$camelVersion")
-    compile 'org.apache.cxf:cxf-core:3.1.0'
-    compile 'org.apache.cxf:cxf-rt-management:3.1.0'
-    compile 'org.apache.cxf:cxf-rt-frontend-jaxws:3.1.0'
+        compile ("org.apache.camel:camel-cxf:$camelVersion")  {
+       exclude module:  "org.apache.cxf » cxf-rt-frontend-jaxws"  
+       exclude module: "org.apache.cxf:cxf-rt-bindings-soap"
+       exclude module: "org.apache.cxf:cxf-rt-frontend-jaxrs"
+    
+    }   
+   
+   
+    compile 'org.apache.cxf:cxf-rt-management:3.1.2'
+    compile 'org.apache.cxf:cxf-rt-bindings-soap:3.1.2'
+    compile "org.apache.cxf:cxf-rt-frontend-jaxws:3.1.2"
     compile 'org.apache.cxf:cxf-rt-transports-http:3.1.0'
+    compile "org.apache.cxf:cxf-rt-frontend-jaxrs:3.1.2"
+    compile "org.apache.cxf:cxf-core:3.1.2"
+   
+   
     testCompile 'junit:junit:4.12'
     runtime('mysql:mysql-connector-java:5.1.35')
     compile 'com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.5.3'
